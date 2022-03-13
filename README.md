@@ -1,2 +1,7 @@
 # The-ANSI-C
-Repository for "The ANSI C programming language" book
+
+The C Programming Language. 2nd Edition
+
+Book by Brian Kernighan and Dennis Ritchie
+
+> Massive respect to creators of C. :)
