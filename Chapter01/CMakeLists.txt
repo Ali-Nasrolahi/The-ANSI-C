@@ -1,4 +1,4 @@
 set(MyDir "${myDir}/Chapter01")
 list(APPEND SRC 
-    ${MyDir}/Sample.c
+    ${MyDir}/ex1-12.c
 )
