@@ -18,5 +18,8 @@ That's how we learn.
 
 ## Disclaimer
 
-None of the sources are claimed to be correct or worked. keep dat in mind.
+These solutions are my own methods for solving the problems based on my own understanding of problems; 
 
+therefore
+
+there's **NO GUARANTEE** that answers are **BEST** or even **CORRECT** solutions.
