@@ -4,8 +4,7 @@
     warning: unknown escape sequence: '\c'
 
     ------------
-    So I'm not sure what supposed to happen.
-    If you do know, let me know pls.
+    You get this warning if you use invalid characters.
 
 */
 #include <stdio.h>
