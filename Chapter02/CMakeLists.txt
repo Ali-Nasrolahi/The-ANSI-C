@@ -6,4 +6,6 @@ list(APPEND SRC
     ${Chapter}/ex2-4.c
     ${Chapter}/ex2-5.c
     ${Chapter}/ex2-6.c
+    ${Chapter}/ex2-7.c
+    ${Chapter}/ex2-8.c
 )

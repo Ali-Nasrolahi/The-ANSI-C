@@ -2,6 +2,7 @@
 
 /*
   replace N-P bit of A by N-P of Z
+  NOT COMPLETE YET
  */
 #define A 17 // 10001
 #define B 5  // 00101
@@ -10,6 +11,10 @@
 // Get Nth rightmost bits of x
 int getNthRight(int x, int n) { return ~0 & 1 << n | x; }
 
+/* getbits: get n bits from position p */
+unsigned getbits(unsigned x, int p, int n) {
+  return (x >> (p + 1 - n)) & ~(~0 << n);
+}
 // Set Nth rightmost bits of x to 1
 int setNthRight(int x, int n) { return (1 << n) - 1 | x; }
 
@@ -18,16 +23,17 @@ int unsetNthRight(int x, int n) { return (~0 ^ ((1 << n) - 1)) & x; }
 
 // Set N bit of x to 11111{x's}
 int setNthBitofX(int x, int n) {
-  return getNthRight(x, n) | unsetNthRight(~0, n);
+  return getbits(x, n, n) | unsetNthRight(~0, n);
 }
 
 int setNofYtoX(int x, int y, int n) {
   return setNthRight(x, n) & setNthBitofX(y, n);
 }
 
-int setBitmask(int x, int y, int n, int p) {
+int setbits(int x, int y, int n, int p) {
   int X = x;
   x = setNofYtoX(x, y, n);
   return setNofYtoX(x, X, p);
 }
-main() { printf("Result: %ld\n", setBitmask(A, B, N, P)); }
+
+main() { printf("Result: %x\n", setNofYtoX(9, 5, 2)); }
