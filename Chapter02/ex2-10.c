@@ -15,6 +15,5 @@ main() {
   printf("Before:\n%s\n", STRING);
   lower(STRING);
   printf("After:\n%s\n", STRING);
-
   return 0;
 }
