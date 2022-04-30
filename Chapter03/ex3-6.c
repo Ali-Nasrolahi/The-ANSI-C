@@ -22,7 +22,7 @@ void itoa(int n, char s[], short pad) {
   } while ((n /= 10) > 0);
 
   while (i < pad)
-    s[i++] = 0;
+    s[i++] = '0';
   /* delete it */
   if (sign < 0)
     s[i++] = '-';
@@ -30,7 +30,7 @@ void itoa(int n, char s[], short pad) {
   reverse(s);
 }
 main() {
-  s[1000];
+  char s[1000];
   itoa(5, s, 2);
-  printf("%s\d", s);
+  printf("%s\n", s);
 }
