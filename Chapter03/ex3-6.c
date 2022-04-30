@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <string.h>
+
 void reverse(char s[]) {
   int c, i, j;
   for (i = 0, j = strlen(s) - 1; i < j; i++, j--) {
@@ -7,7 +10,7 @@ void reverse(char s[]) {
   }
 }
 
-void itoa(int n, char s[]) {
+void itoa(int n, char s[], short pad) {
   int i, sign;
   if ((sign = n) < 0) /* record sign */
     n = -n;
@@ -17,10 +20,17 @@ void itoa(int n, char s[]) {
     /* generate digits in reverse order */
     s[i++] = n % 10 + '0'; /* get next digit */
   } while ((n /= 10) > 0);
+
+  while (i < pad)
+    s[i++] = 0;
   /* delete it */
   if (sign < 0)
     s[i++] = '-';
   s[i] = '\0';
   reverse(s);
 }
-main() {}
+main() {
+  s[1000];
+  itoa(5, s, 2);
+  printf("%s\d", s);
+}
