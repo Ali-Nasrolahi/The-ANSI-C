@@ -8,30 +8,24 @@
 
 #define N 8
 
-main()
-{
-    int t, b, c;
-    t = b = 0;
+main() {
+  int t, b, c;
+  t = b = 0;
 
-    while ((c = getchar()) != EOF)
-    {
-        if (c == ' ')
-        {
-            t += (++b) / N;
-            b %= N;
-        }
-        else
-        {
-            while (t)
-                putchar('\t'), t--;
-            if (c == '\t')
-            {
-                putchar(c);
-                continue;
-            }
-            while (b)
-                putchar(' '), b--;
-            putchar(c);
-        }
+  while ((c = getchar()) != EOF) {
+    if (c == ' ') {
+      t += (++b) / N;
+      b %= N;
+    } else {
+      while (t)
+        putchar('\t'), t--;
+      if (c == '\t') {
+        putchar(c);
+        continue;
+      }
+      while (b)
+        putchar(' '), b--;
+      putchar(c);
     }
+  }
 }

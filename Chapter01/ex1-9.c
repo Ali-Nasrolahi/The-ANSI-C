@@ -1,14 +1,12 @@
 #include <stdio.h>
-main()
-{
+main() {
 
-    int c;
-    char lastc = '\0';
-    while ((c = getchar()) != EOF)
-    {
-        if (c == ' ' && lastc == ' ')
-            continue;
-        lastc = c;
-        putchar(c);
-    }
+  int c;
+  char lastc = '\0';
+  while ((c = getchar()) != EOF) {
+    if (c == ' ' && lastc == ' ')
+      continue;
+    lastc = c;
+    putchar(c);
+  }
 }

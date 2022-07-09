@@ -8,7 +8,4 @@
 
 */
 #include <stdio.h>
-main()
-{
-    printf("Some text before \c And some text after");
-}
+main() { printf("Some text before \c And some text after"); }

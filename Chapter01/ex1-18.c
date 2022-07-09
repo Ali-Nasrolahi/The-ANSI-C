@@ -4,57 +4,50 @@
 int Getline(char line[], int maxline);
 void Copy(char to[], char from[]);
 
-main()
-{
-    int len;
-    int max, i, j;
-    char line[MAXLINE];
-    char lines[MAXLINE][MAXLINE];
+main() {
+  int len;
+  int max, i, j;
+  char line[MAXLINE];
+  char lines[MAXLINE][MAXLINE];
 
-    max = i = j = 0;
-    while ((len = Getline(line, MAXLINE)) > 0)
-    {
-        Copy(lines[i], line);
-        i++;
-    }
+  max = i = j = 0;
+  while ((len = Getline(line, MAXLINE)) > 0) {
+    Copy(lines[i], line);
+    i++;
+  }
 
-    while (j <= i)
-    {
-        if (lines[j][0] != '\n')
-            printf("%s\n", lines[j]);
+  while (j <= i) {
+    if (lines[j][0] != '\n')
+      printf("%s\n", lines[j]);
 
-        j++;
-    }
+    j++;
+  }
 
-    return 0;
+  return 0;
 }
 
-int Getline(char s[], int lim)
-{
-    int c, i, trailing;
-    trailing = 1;
-    for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n';)
-    {
-        if ((c == ' ' || c == '\t') && trailing)
-            continue;
-        trailing = 0;
-        s[i] = c;
-        i++;
-    }
-    if (c == '\n')
-    {
-        s[i] = c;
-        i++;
-    }
+int Getline(char s[], int lim) {
+  int c, i, trailing;
+  trailing = 1;
+  for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n';) {
+    if ((c == ' ' || c == '\t') && trailing)
+      continue;
+    trailing = 0;
+    s[i] = c;
+    i++;
+  }
+  if (c == '\n') {
+    s[i] = c;
+    i++;
+  }
 
-    s[i] = '\0';
-    return i;
+  s[i] = '\0';
+  return i;
 }
 
-void Copy(char to[], char from[])
-{
-    int i;
-    i = 0;
-    while ((to[i] = from[i]) != '\0')
-        ++i;
+void Copy(char to[], char from[]) {
+  int i;
+  i = 0;
+  while ((to[i] = from[i]) != '\0')
+    ++i;
 }
